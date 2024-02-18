@@ -1,0 +1,26 @@
+Movie.objects.creat(name="ozler",language="malayalam",run_time=120,genre="malayalam",director="midhun",year=2023,actors="jayram",)
+Movie.objects.create(name="bahubali",language="tamil",runt_time=120,genre="tamail",director="ram",year="2018",actor="prabas")
+Movie.objects.create(name="cid moosa",language"malayalam",runt_time=140,genre="malayalam",director="mohan",year=2002,actors="dileep")
+Movie.objects.create(name="anyan",language="tamil",runt_time="123",genre="tamil",director="noker",year=2000,actors="vikram")
+*orm querry for taking all object
+qs=Movie.objects.all()
+*orm querry for getting a specific object
+qs=Movie.objects.get(id=2)
+*orm querry for taking some specific objects
+qs=Movie.objects.filter(language="malayalam")
+*orm qurey for updating objects
+Movie.objects.filter(id=1).update(genre="action")
+*orm querry for deleting objects
+Movie.object.filter(id=2).delete()
+=====feild lookup===
+qs=Movie.objects.filter(year__gt=2002)
+> __gt
+< __lt
+<= __lte
+> __gte
+
+qs=Movie.object.filter(runt_time__lt=123)
+*orm querry for excluding objects
+qs=Movie.objects.exclude(language="tamil")
+*orm querry for listing all genre
+qs=Movie.objects.all().values_list("genre",flat=True.).distinct()
